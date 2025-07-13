@@ -1,0 +1,35 @@
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment files (محتویات حساس مثل کلید API)
+.env
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Compiled files
+*.so
+
+# SQLite DBs (اگر استفاده می‌کنی)
+*.sqlite3
+*.db
+
+# Node.js (اگر js/npm استفاده شده)
+node_modules/
+
+# Static cache
+staticfiles/

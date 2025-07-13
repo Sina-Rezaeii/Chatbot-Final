@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 600px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.chatbox {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 400px;
+  overflow-y: auto;
+  background: #fafafa;
+  margin-bottom: 1rem;
+}
+
+.message {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.message.user {
+  text-align: right;
+  color: #1a73e8;
+}
+
+.message.bot {
+  text-align: left;
+  color: #333;
+}
+
+.message.error {
+  text-align: center;
+  color: red;
+}
+
+.message span {
+  font-weight: bold;
+  display: block;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0f5ec1;
+}

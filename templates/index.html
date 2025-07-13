@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatBot | AI Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+  <h1>AI Chat Assistant</h1>
+  
+  <div id="chatbox" class="chatbox"></div>
+  
+  <form id="chat-form" onsubmit="sendMessage(event)">
+    <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" required />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+async function sendMessage(event) {
+  event.preventDefault();
+
+  const input = document.getElementById("userInput");
+  const chatbox = document.getElementById("chatbox");
+  const userText = input.value.trim();
+  if (!userText) return;
+
+  chatbox.innerHTML += `<div class="message user"><span>You:</span> ${userText}</div>`;
+  input.value = "";
+  chatbox.scrollTop = chatbox.scrollHeight;
+
+  try {
+    const res = await fetch("/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: userText })
+    });
+
+    const data = await res.json();
+    if (data.reply) {
+      chatbox.innerHTML += `<div class="message bot"><span>Bot:</span> ${data.reply}</div>`;
+    } else {
+      chatbox.innerHTML += `<div class="message error"><span>Error:</span> ${data.error}</div>`;
+    }
+
+    chatbox.scrollTop = chatbox.scrollHeight;
+  } catch (err) {
+    chatbox.innerHTML += `<div class="message error"><span>Error:</span> ${err.message}</div>`;
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+}
+</script>
+
+</body>
+</html>
