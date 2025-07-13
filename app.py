@@ -4,7 +4,6 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
 openai_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
@@ -21,13 +20,20 @@ def chat():
         return jsonify({"error": "No message provided"}), 400
 
     try:
-        response = client.chat.completions.create(
+        response = client.responses.create(
             model="gpt-4.1-nano",
-            messages=[
-                {"role": "user", "content": user_input}
-            ]
+            input=[
+                {
+                    "role":"developer",
+                    "content":"You are a helpfull assistant"
+                },
+                {
+                    "role":"user",
+                    "content": user_input
+                }
+            ],
         )
-        message = response.choices[0].message.content
+        message = response.output_text
         return jsonify({"reply": message})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
