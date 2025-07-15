@@ -33,10 +33,13 @@ The OpenAI API key is managed securely through environment variables.
    cd Chatbot-Final
 
 ## Create a virtual environment (optional but recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # or on Windows: venv\Scripts\activate
 
-python -m venv venv
-source venv/bin/activate  # or on Windows: venv\Scripts\activate
-
-
+## Asdasd
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # or on Windows: venv\Scripts\activate
 
 
