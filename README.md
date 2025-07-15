@@ -31,15 +31,60 @@ The OpenAI API key is managed securely through environment variables.
    ```bash
    git clone https://github.com/Sina-Rezaeii/Chatbot-Final.git
    cd Chatbot-Final
+   ```
 
-## Create a virtual environment (optional but recommended):
+2. **Create a virtual environment (optional but recommended):**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # or on Windows: venv\Scripts\activate
+   source venv/bin/activate  # on Windows: venv\Scripts\activate
+   ```
 
-## Asdasd
+3. **Install the required libraries:**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # or on Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
+4. **Create a `.env` file in the root directory and add your OpenAI API key:**
+   ```
+   OPENAI_API_KEY=your_api_key_here
+   ```
 
+5. **Run the app:**
+   ```bash
+   python app.py
+   ```
+
+6. **Open your browser and go to:**
+   ```
+   http://127.0.0.1:5000
+   ```
+
+---
+
+## 📁 Project Structure
+
+```
+Chatbot-Final/
+├── app.py
+├── templates/
+│   └── index.html
+├── static/
+│   └── styles.css
+├── .env (not uploaded)
+└── requirements.txt
+```
+
+---
+
+## 📌 Notes
+
+- This is a beginner-friendly project. No AI model training is needed—OpenAI does the heavy lifting.
+- You must have an OpenAI API key to run this project.
+- For deployment, make sure to hide your `.env` file properly.
+
+---
+
+## 🧠 Author
+
+Made with 💻 by Sina Rezaei  
+📬 [rezaeii.sina.gh@gmail.com](mailto:rezaeii.sina.gh@gmail.com)
